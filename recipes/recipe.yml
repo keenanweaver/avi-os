@@ -1,37 +1,25 @@
-# image will be published to ghcr.io/<user>/<name>
 name: avi-os
-# description will be included in the image's metadata
 description: OS for my Aviture laptop
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-nvidia
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
 
   - type: rpm-ostree
     repos:
-      #- https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
       - https://negativo17.org/repos/fedora-multimedia.repo
     install:
       - distrobox
-      - docker-ce
-      - docker-cli
-      - helix
-      #- starship
       - virt-manager
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firefox-langpacks
 
   - type: akmods
     base: main
@@ -56,7 +44,7 @@ modules:
       - rsms-inter-fonts
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: true
     system:
       install:
         - com.github.IsmaelMartinez.teams_for_linux
@@ -71,5 +59,5 @@ modules:
         - org.onlyoffice.desktopeditors
         - us.zoom.Zoom
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
 
