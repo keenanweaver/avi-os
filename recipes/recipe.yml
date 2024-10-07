@@ -29,7 +29,7 @@ modules:
   - type: script
     snippets:
       - "mkdir -p /opt"
-      - "curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --no-confirm"
+      - "curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --no-confirm --no-start-daemon"
       - "rpm --import https://downloads.1password.com/linux/keys/1password.asc"
 
   - type: bling
