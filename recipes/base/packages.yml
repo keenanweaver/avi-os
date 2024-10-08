@@ -5,7 +5,6 @@ modules:
     install:
       - ffmpeg
       - power-profiles-daemon
-      #- 1password
       - distrobox
       - virt-manager
       - xwaylandvideobridge
@@ -17,3 +16,7 @@ modules:
     files:
       - source: system/etc/yum.repos.d
         destination: /etc/yum.repos.d
+
+  - type: bling
+    install:
+       - 1password 
