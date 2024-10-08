@@ -10,7 +10,7 @@ modules:
     install:
       - ffmpeg
       - power-profiles-daemon
-      - 1password
+      #- 1password
       - distrobox
       - virt-manager
       - xwaylandvideobridge
