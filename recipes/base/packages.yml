@@ -1,12 +1,8 @@
 modules:
-  - type: script
-    snippets:
-      - "mkdir -p /etc/yum.repos.d"
-
   - type: files
     files:
-      - source: etc/yum.repos.d/1password.repo
-        destination: /etc/yum.repos.d/1password.repo
+      - source: system/etc/yum.repos.d
+        destination: /etc/yum.repos.d
 
   - type: rpm-ostree
     keys:
