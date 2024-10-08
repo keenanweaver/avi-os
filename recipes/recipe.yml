@@ -5,59 +5,20 @@ base-image: ghcr.io/ublue-os/kinoite-nvidia
 image-version: latest
 
 modules:
+  - from-file: base/packages.yml
+  - from-file: base/flatpaks.yml
+  - from-file: base/fonts.yml
+  - from-file: displaylink.yml
+  - from-file: nix.yml
+
   - type: files
     files:
       - source: system
         destination: /
 
-  - type: rpm-ostree
-    repos:
-      - https://download.docker.com/linux/fedora/docker-ce.repo
-      - https://negativo17.org/repos/fedora-multimedia.repo
-    install:
-      - distrobox
-      - virt-manager
-    remove:
-      - firefox
-      - firefox-langpacks
-
-  - type: akmods
-    base: main
-    install:
-      - evdi
-
   - type: script
     snippets:
       - "mkdir -p /opt"
-      - "curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --no-confirm --no-start-daemon"
-      - "rpm --import https://downloads.1password.com/linux/keys/1password.asc"
-
-  - type: bling
-    install:
-      - 1password
-
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - JetBrainsMono
-    install:
-      - rsms-inter-fonts
-
-  - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - com.github.IsmaelMartinez.teams_for_linux
-        - com.github.tchx84.Flatseal
-        - com.microsoft.Edge 
-        - com.usebottles.bottles
-        - com.vscodium.codium
-        - io.github.zen_browser.zen
-        - it.mijorus.gearlever
-        - org.mozilla.firefox
-        - org.mozilla.Thunderbird
-        - org.onlyoffice.desktopeditors
-        - us.zoom.Zoom
 
   - type: signing
 

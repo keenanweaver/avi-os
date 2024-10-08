@@ -1,0 +1,28 @@
+modules:
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system)"
+      install:
+        - com.github.IsmaelMartinez.teams_for_linux
+        - com.github.tchx84.Flatseal
+        - com.microsoft.Edge
+        - com.usebottles.bottles
+        - com.vscodium.codium
+        - io.github.zen_browser.zen
+        - it.mijorus.gearlever
+        - org.mozilla.firefox
+        - org.mozilla.Thunderbird
+        - org.onlyoffice.desktopeditors
+        - us.zoom.Zoom
+      remove:
+
+  - type: default-flatpaks
+    system:
+    user:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub-user
+      repo-title: "Flathub (user)"
+      install:
