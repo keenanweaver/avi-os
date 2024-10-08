@@ -1,7 +1,5 @@
 modules:
   - type: rpm-ostree
-    keys:
-      - https://downloads.1password.com/linux/keys/1password.asc
     install:
       - ffmpeg
       - power-profiles-daemon
@@ -11,11 +9,6 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-
-  - type: files
-    files:
-      - source: system/etc/yum.repos.d
-        destination: /etc/yum.repos.d
 
   - type: bling
     install:
