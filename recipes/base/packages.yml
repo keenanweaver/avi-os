@@ -1,4 +1,9 @@
 modules:
+  - type: files
+    files:
+      - source: etc/yum.repos.d
+        destination: /etc/yum.repos.d
+
   - type: rpm-ostree
     keys:
       - https://downloads.1password.com/linux/keys/1password.asc
@@ -12,8 +17,3 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-
-  - type: files
-    files:
-      - source: etc/yum.repos.d
-        destination: /etc/yum.repos.d
