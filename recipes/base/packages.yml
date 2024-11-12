@@ -2,7 +2,6 @@ modules:
   - type: rpm-ostree
     install:
       - ffmpeg
-      - power-profiles-daemon
       - distrobox
       - virt-manager
       - xwaylandvideobridge
