@@ -6,9 +6,9 @@ modules:
       - distrobox
       - virt-manager
       - xwaylandvideobridge
-    remove:
-      - firefox
-      - firefox-langpacks
+    #remove:
+    #  - firefox
+    #  - firefox-langpacks
 
   - type: bling
     install:
