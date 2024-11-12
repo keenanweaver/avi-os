@@ -1,7 +1,7 @@
 name: avi-os
 description: OS for my Aviture laptop
 
-base-image: ghcr.io/ublue-os/kinoite-nvidia
+base-image: ghcr.io/ublue-os/aurora-dx-nvidia
 image-version: latest
 
 modules:

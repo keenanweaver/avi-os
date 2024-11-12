@@ -12,4 +12,4 @@ modules:
 
   - type: bling
     install:
-       - 1password 
+       - 1password
